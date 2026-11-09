@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+const gallery = [
+  {title:'Contemporary Bathroom',type:'Full bathroom renovation',tone:'placeholder-light'},
+  {title:'Custom Glass Shower',type:'Shower installation',tone:''},
+  {title:'Heated Floor Preparation',type:'Behind the finish',tone:'placeholder-warm'},
+  {title:'Statement Tile & Soaking Tub',type:'Bathroom renovation',tone:'placeholder-warm'},
+  {title:'Floating Vanity & Fixtures',type:'Finishing details',tone:'placeholder-light'},
+  {title:'Architectural Shower Details',type:'Bathroom renovation',tone:''},
+  {title:'Custom Vanity Installation',type:'Fixtures & finishes',tone:'placeholder-warm'},
+  {title:'Contemporary Shower',type:'Shower installation',tone:'placeholder-light'},
+];
+---
+<Base title="Our Work | S&B Plumbing Inc. Ottawa" description="Explore residential bathroom projects, custom shower installations and details from S&B Plumbing Inc. in Ottawa.">
+  <section class="page-hero"><span class="eyebrow">Our projects</span><h1 class="section-title">Built with purpose.<br/><em>Finished with care.</em></h1><p>From the underlying installation to the final fixtures, every element matters. Our project gallery highlights the range of our bathroom and plumbing work.</p></section>
+  <section class="section-pad"><div class="gallery-grid">{gallery.map((item,i)=><article class="gallery-card reveal"><div class="photo-panel"><div class={'image-placeholder '+item.tone}><span>Project image {String(i+1).padStart(2,'0')} / add approved photo</span></div></div><h3>{item.title}</h3><p>{item.type}</p></article>)}</div></section>
+</Base>
